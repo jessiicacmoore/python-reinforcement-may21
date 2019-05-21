@@ -20,4 +20,11 @@ def retrieve_room_capacity(room_number_input):
 # Retrieve the capacity of room 201 and store it in a variable.
 rm_201_capacity = retrieve_room_capacity(201)
 
-print(rm_201_capacity)
+# Find all the events taking place in room 201. Iterate through them and print "ok" if the number of planned attendees will fit in the room.
+def check_capacity():
+    
+    for event in hotel['data']['events']:
+        if event['attendees'] <= rm_201_capacity:
+            print(f"Event{event['id']}: ok")
+
+check_capacity()
